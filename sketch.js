@@ -1,5 +1,5 @@
 //Going above 11 itterations crashes the browser
-var abba = new thueMorse(1);
+var abba = new thueMorse(0);
 var p, n;
 
 function setup() {
@@ -23,5 +23,17 @@ function setup() {
 }
 
 function draw() {
-    p.html(abba.getElement(n++)+' ', true);
+    if(n < abba.sequence.length) {
+        p.html(abba.getElement(n++)+' ', true);
+    }
+}
+
+function mousePressed() {
+    n = 0;
+    p.html('');
+    for(var i = 0; i < abba.sequence.length; i++) {
+        p.html(abba.getElement(n++)+' ', true);
+    }
+    abba.itterations++;
+    abba.generate();
 }

@@ -16,13 +16,14 @@ function thueMorse(itterations) {
             }
             abba = abba.concat(abba2, abba2, abba);
         }
-        return abba;
+        this.sequence = abba;
+        return this.sequence;
     }
-    this.sequence = this.generate();
+    this.generate();
     this.getElement = function(element) {
         if(element >= this.sequence.length) {
             this.itterations++;
-            this.sequence = this.generate();
+            this.generate();
         }
         return this.sequence[element];
     }
