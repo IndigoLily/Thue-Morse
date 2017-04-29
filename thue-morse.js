@@ -5,8 +5,6 @@ function thueMorse(itterations) {
         // console.log("Generate "+this.itterations);
         var abba = ['a'];
         for(var i = 0; i < this.itterations; i++) {
-            //make a copy of abba
-            abba1 = abba;
             //make new array that's the inverse of abba
             var abba2 = [];
             for(var j = 0; j < abba.length; j++) {
@@ -16,7 +14,7 @@ function thueMorse(itterations) {
                     abba2[j] = 'a';
                 }
             }
-            abba = abba1.concat(abba2, abba2, abba1);
+            abba = abba.concat(abba2, abba2, abba);
         }
         return abba;
     }
